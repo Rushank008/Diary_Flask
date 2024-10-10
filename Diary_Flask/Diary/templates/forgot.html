@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}Forgot Password{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Forgot Password</h2>
+    <form method="POST" action="/forgot-password">
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="hint">Hint</label>
+            <input type="text" class="form-control" id="hint" name="hint" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

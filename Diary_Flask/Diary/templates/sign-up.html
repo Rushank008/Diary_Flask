@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}Sign-up page{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Sign Up</h2>
+    <form method="POST" action="/sign-up">
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password1">Password</label>
+            <input type="password" class="form-control" id="password1" name="password1" required>
+        </div>
+        <div class="form-group">
+            <label for="password2">Confirm Password</label>
+            <input type="password" class="form-control" id="password2" name="password2" required>
+        </div>
+        <div class="form-group">
+            <label for="hint">Hint (Optional)</label>
+            <input type="text" class="form-control" id="hint" name="hint">
+            <small class="form-text text-muted">You can provide a hint if you ever want to change your password in future (optional).</small>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Diary{% endblock %}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Body Styling */
+        body {
+            background-color: #f0f2f5; /* Light grey background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+            color: #333; /* Dark text color for readability */
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #343a40; /* Dark background for the navbar */
+            border-bottom: 3px solid #007bff; /* Blue bottom border */
+        }
+
+        .navbar-brand {
+            font-weight: bold; /* Emphasize brand name */
+            color: #ffffff; /* White text */
+        }
+
+        .navbar-brand:hover {
+            color: #adb5bd; /* Light grey on hover */
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff; /* White text for links */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #007bff; /* Blue color on hover */
+            background-color: rgba(0, 123, 255, 0.1); /* Subtle blue background on hover */
+            border-radius: 4px; /* Rounded corners */
+        }
+
+        /* Container Styling */
+        .container {
+            margin-top: 30px; /* Space above container */
+            margin-bottom: 30px; /* Space below container */
+        }
+
+        /* Card Styling */
+        .card {
+            margin-bottom: 20px; /* Space below cards */
+            border: none; /* Remove default border */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .card-header {
+            background-color: #007bff; /* Blue header */
+            color: #ffffff; /* White text */
+            border-bottom: none; /* No border at the bottom */
+        }
+
+        .card-body {
+            background-color: #ffffff; /* White background for content */
+            color: #495057; /* Dark grey text */
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #343a40; /* Dark background */
+            color: #ffffff; /* White text */
+            padding: 15px; /* Padding around text */
+            text-align: center; /* Center text */
+            position: fixed; /* Fixed position at the bottom */
+            width: 100%; /* Full width */
+            bottom: 0; /* Position at the bottom */
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Shadow on top edge */
+        }
+
+        /* Custom Button Styling */
+        .btn-custom {
+            background-color: #007bff; /* Blue background */
+            color: #ffffff; /* White text */
+            border: none; /* Remove default border */
+            border-radius: 4px; /* Rounded corners */
+            padding: 10px 20px; /* Padding inside button */
+            text-align: center; /* Center text */
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            color: #ffffff; /* Ensure text remains white */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+        }
+
+        /* Form Styling */
+        .form-control {
+            border-radius: 4px; /* Rounded corners */
+            border-color: #ced4da; /* Light grey border */
+        }
+
+        .form-control:focus {
+            border-color: #007bff; /* Blue border on focus */
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Subtle blue shadow on focus */
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Diary</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                {% if current_user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="/create-entry">New Entry</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/view-entries">View Entries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                {% else %}
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/sign-up">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}<h1>This is the Home page!</h1>{% endblock %}
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 My Diary. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+ 
