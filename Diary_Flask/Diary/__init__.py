@@ -9,10 +9,10 @@ def create_app():
     app = Flask(__name__)
 
     # Configuration
-    app.config['SECRET_KEY'] = 'jawrja awhawjha'
+    app.config['SECRET_KEY'] = 'Your_secretkey'
     app.config['MYSQL_HOST'] = 'localhost'
     app.config['MYSQL_USER'] = 'root'
-    app.config['MYSQL_PASSWORD'] = 'Mush3kah6eeng9so'
+    app.config['MYSQL_PASSWORD'] = 'Ypur_pass'
     app.config['MYSQL_DB'] = 'diary'
 
     # Initialize MySQL
